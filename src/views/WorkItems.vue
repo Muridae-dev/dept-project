@@ -58,11 +58,17 @@ export default {
 
                 */
                 {
+                    // link to image in ../assets/items/
                     imageLink: "image2.png",
+                    // the title/header of the article
                     header: "BOL.COM",
+                    // the article text
                     article: "A Summer island in the Netherlands",
+                    // link to the actual article used as href for the entire div
                     readMoreLink: "some href",
+                    // used together with filter inside "Work.vue"
                     filters: ["recreation", "marketing"],
+                    // if it is a small item
                     smallItem: true,
                 },
                 {

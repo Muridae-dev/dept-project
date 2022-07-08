@@ -8,6 +8,8 @@
             them to reach for the stars.
         </article>
         <div class="logo-flex-container">
+            <!-- Here we loop through all the logos imported from the folder "../assets/big-logos" -->
+            <!-- Look @ methods -> importAll(r) & async created () -> this.logos, below -->
             <div v-for="logo in logos" :key="logo.src" class="clients-logo-container">
                 <img class="logo-img" :src="logo.src" />
             </div>
@@ -25,14 +27,14 @@ export default {
         
     },
     async created() {
-        // PUTTING ALL IMPORTED IMAGES INTO "IMAGES" ARRAY
+        // PUTTING ALL IMPORTED IMAGES INTO "LOGOS" ARRAY
         this.logos = await this.importAll(require.context('../assets/big-logos', false, /\.(png|jpe?g|svg)$/))
     },
     methods: {
-        // IMPORTING ALL IMAGES FROM MASCOTS FOLDER
+        // IMPORTING ALL LOGOS FROM LOGO FOLDER "../assets/big-logos"
         importAll(r) {
             let logosTemp = {}
-            r.keys().forEach((logo, index) => {
+            r.keys().forEach((logo) => {
                 logosTemp[logo.replace('./', '')] = r(logo);
             });
             let logosArray = Object.keys(logosTemp).map(logo => {let img = new Image(); img.src = require('../assets/big-logos/' + logo); return img;})

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <NavBar :vectorLetters="vectorLetters" :siteLinks="siteLinks"/>
+    <NavBar />
     <Work />
     <Clients />
     <QuestionsForm />
-    <Footer :vectorLetters="vectorLetters" :siteLinks="siteLinks"/>
+    <Footer />
     <ToTopArrow />
   </div>
 </template>
@@ -27,38 +27,6 @@ export default {
     Footer,
     ToTopArrow,
   },
-  data() {
-    return {
-      vectorLetters: ["1", "2", "3", "4", "5"],
-      siteLinks: [
-        {
-            title: "WORK",
-            link: null,
-            isActive: true,
-        },
-        {
-            title: "CULTURE",
-            link: null,
-        },
-        {
-            title: "SERVICE",
-            link: null,
-        },
-        {
-            title: "INSIGHTS",
-            link: null,
-        },
-        {
-            title: "CAREERS",
-            link: null,
-        },
-        {
-            title: "CONTACT",
-            link: null,
-        }
-        ]
-    }
-  }
 }
 </script>
 
@@ -76,7 +44,8 @@ export default {
   }
 
   a {
-        text-decoration:none;
-        color:white;
+      text-decoration:none;
+      color:white;
+      cursor:pointer;
   }
 </style>

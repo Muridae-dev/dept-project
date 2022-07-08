@@ -2,18 +2,12 @@
     <footer class="footer-container">
         <section class="upper-footer">
             <div class="footer-logo-container">
-                <div class="letter-container" v-for="(vectorLetter, index) in vectorLetters" :key="vectorLetter">
-                    <img :src="require(`../assets/dept-vector-white/letter${vectorLetter}.svg`)" :class="index == 4 ? 'copy-right-logo' : 'svg-letters'"/>
-                </div>
+                <DeptLogo />
             </div>
 
             
             <div class="footer-link-container">
-                <a v-for="siteLink in siteLinks" :key="siteLink.title" :src="siteLink.link" 
-                class="footer-links"
-                :style="siteLink.isActive ? {'text-decoration' : 'underline'} : null">
-                    {{siteLink.title}}
-                </a>
+                <SiteLinks />
             </div>
         </section>
 
@@ -29,9 +23,15 @@
 </template>
 
 <script>
+import DeptLogo from "../components/DeptLogo.vue"
+import SiteLinks from "../components/SiteLinks.vue"
+
 export default {
     name: "Footer",
-    props: ["siteLinks", "vectorLetters"]
+    components: {
+        DeptLogo,
+        SiteLinks
+    }
 }
 </script>
 
