@@ -7,7 +7,7 @@
 
             
             <div class="footer-link-container">
-                <SiteLinks />
+                <SiteLinks :isFooter="true"/>
             </div>
         </section>
 

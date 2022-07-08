@@ -2,7 +2,7 @@
     <!-- This a loops through all the links in the object below -->
     <!-- It only underlines the object/link that "isActive = true" -->
     <a v-for="siteLink in siteLinks" :key="siteLink.title" :src="siteLink.link" 
-    class="site-links"
+    :class="isFooter ? 'footer-links' : 'site-links'"
     :style="[siteLink.isActive ? {'text-decoration' : 'underline'} : null,
     menuActive ? {'opacity' : '0'} : null]">
         {{siteLink.title}}
@@ -12,6 +12,7 @@
 <script>
 export default {
     name: "SiteLinks",
+    props: ["menuActive", "isFooter"],
     data() {
         return {
             siteLinks: [

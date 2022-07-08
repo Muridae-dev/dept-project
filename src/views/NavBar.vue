@@ -5,7 +5,7 @@
         </div>
 
         <section class="site-link-container">
-            <SiteLinks />
+            <SiteLinks :menuActive="menuActive"/>
 
             <!------------- MENU BUTTON ------------->
             <div class="menu-btn" @click="menuActive = !menuActive">
